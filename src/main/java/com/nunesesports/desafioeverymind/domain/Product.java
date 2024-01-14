@@ -1,5 +1,6 @@
 package com.nunesesports.desafioeverymind.domain;
 
+import com.nunesesports.desafioeverymind.dtos.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,4 +21,11 @@ public class Product {
     private Integer code;
     private String description;
     private Float price;
+
+    public Product(ProductDTO data){
+        this.name = data.name();
+        this.code = data.code();
+        this.description = data.description();
+        this.price = data.price();
+    }
 }
